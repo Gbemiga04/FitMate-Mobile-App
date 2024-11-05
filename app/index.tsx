@@ -12,7 +12,7 @@ export default function Index() {
   setTimeout(SplashScreen.hideAsync, 2000)
   return (
 
-        <Onboarding />
+    <Onboarding/>
 
   );
 }

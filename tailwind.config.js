@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // NOTE: Update this to include the paths to all of your component files.
-  content: ["./app/**/*.{js,jsx,ts,tsx}"],
+  content: ["./app.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
@@ -22,15 +22,15 @@ module.exports = {
         },
       },
       fontFamily: {
-        pthin: ["Onest-Thin", "sans-serif"],
-        pextralight: ["Onest-ExtraLight", "sans-serif"],
-        plight: ["Onest-Light", "sans-serif"],
-        pregular: ["Onest-Regular", "sans-serif"],
-        pmedium: ["Onest-Medium", "sans-serif"],
-        psemibold: ["Onest-SemiBold", "sans-serif"],
-        pbold: ["Onest-Bold", "sans-serif"],
-        pextrabold: ["Onest-ExtraBold", "sans-serif"],
-        pblack: ["Onest-Black", "sans-serif"],
+        othin: ["Onest-Thin", "sans-serif"],
+        oextralight: ["Onest-ExtraLight", "sans-serif"],
+        olight: ["Onest-Light", "sans-serif"],
+        oregular: ["Onest-Regular", "sans-serif"],
+        omedium: ["Onest-Medium", "sans-serif"],
+        osemibold: ["Onest-SemiBold", "sans-serif"],
+        obold: ["Onest-Bold", "sans-serif"],
+        oextrabold: ["Onest-ExtraBold", "sans-serif"],
+        oblack: ["Onest-Black", "sans-serif"],
       },
     },
   },
