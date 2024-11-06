@@ -5,6 +5,7 @@ import slides from '../slides';
 import OnboardingItem from './OnboardingItem';
 import Paginator from './Paginator';
 import { TouchableOpacity } from 'react-native';
+import { router, Redirect } from 'expo-router';
 
 const Onboarding =() => {
 
@@ -36,7 +37,7 @@ const Onboarding =() => {
       ref={slidesRef}
       />
       <Paginator data = {slides} scrollX={scrollX} /><TouchableOpacity className='justify-center items-center'
-      activeOpacity={0.5}
+      activeOpacity={0.5} onPress={() => router.push('/(auth)/welcome')}
       >
       <Text className='font-osemibold justify-center items-center mb-20 text-2xl'>Skip</Text></TouchableOpacity>
       </View>
