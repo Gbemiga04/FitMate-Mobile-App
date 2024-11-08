@@ -7,6 +7,8 @@ const _layout = () => {
   return (
     <Stack>
         <Stack.Screen name='welcome' options={{headerShown:false}}/>
+        <Stack.Screen name='signin' options={{headerShown:false}}/>
+        <Stack.Screen name='Index' options={{headerShown:false}}/>
     </Stack>
   )
   

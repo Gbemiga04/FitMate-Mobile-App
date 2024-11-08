@@ -3,6 +3,7 @@ import React from 'react'
 import JoinButton from './JoinButton'
 import { useWindowDimensions } from 'react-native'
 import { useEffect, useRef, useState } from 'react'
+import { router, Redirect } from 'expo-router';
 
 const DATA = [
     {
@@ -34,23 +35,23 @@ const DATA = [
 ]
 
 const JoinPage = () => {
-    const flatListRef = useRef(null); // Ref to control FlatList
-    const [currentIndex, setCurrentIndex] = useState(0); // State to keep track of current index
+    const flatListRef = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
   
     useEffect(() => {
     const interval = setInterval(() => {
-        // Calculate next index (looping back to 0 if at the end)
+
         const nextIndex = currentIndex < DATA.length - 1 ? currentIndex + 1 : 0;
         setCurrentIndex(nextIndex);
 
-        // Scroll to the next item
+
         flatListRef.current?.scrollToIndex({
         index: nextIndex,
         animated: true,
         });
-      }, 1500); // Scroll every 2 seconds
+      }, 1500); 
 
-      return () => clearInterval(interval); // Clear interval on component unmount
+      return () => clearInterval(interval);
     }, [currentIndex]);
 const {width} = useWindowDimensions()
 
@@ -75,13 +76,15 @@ const {width} = useWindowDimensions()
         <Text className='text-[50px] text-right font-oregular'>Meet your {"\n"}<Text className="font-obold">{DATA[currentIndex].title}</Text> buddy {"\n"} on <Text className='text-primary font-oblack'>FitMate!</Text></Text>  
     </View>
     <View className=' flex-[0.3] w-full items-center justify-center mb-[10%]'><JoinButton title = "Join the FitMate Community!"/>
-    <Text className='py-3 font-osemibold text-[15px]'>Already a member? <Text className='font-oblack text-primary'>Login</Text>
-    </Text>
+    <View className='flex-row'><Text className='py-3 font-osemibold text-[15px]'>Already a member?</Text><TouchableOpacity onPress={()=>{
+    router.push('./signin')
+    }} className='items-center justify-center'><Text className='font-oblack text-primary'> Login</Text></TouchableOpacity></View>
+
     </View>
 
     </View>
     </SafeAreaView>
-  )
+)
 }
 
 export default JoinPage
